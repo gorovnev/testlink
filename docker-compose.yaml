@@ -1,0 +1,25 @@
+version: '3.0'
+
+services:
+ tldb:
+   image: mariadb:10
+   restart: on-failure
+   ports:
+     - 3306:3306
+   volumes:
+     - ${PWD}/data/db:/var/lib/mysql
+   environment:
+     MYSQL_PASSWORD: e83c82ea552540f8
+     MYSQL_USER: tl_user
+     MYSQL_ROOT_PASSWORD: e83c82ea552540f8
+
+ testlink:
+   image: testlink
+   depends_on:
+     - tldb
+   ports:
+     - 8080:80
+   volumes:
+     - ./data/apache:/var/log/apache2
+     - ./data/testlink/logs:/var/testlink/logs
+     - ./data/testlink/upload_area:/var/testlink/upload_area
