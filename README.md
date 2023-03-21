@@ -17,10 +17,15 @@ docker-compose up -d
 4. On Database Configuration screen put the following settings:
 
 Database host: tldb
+
 Database name: testlink
+
 Database admin login: root
+
 Database admin password: e83c82ea552540f8
+
 TestLink DB login: root
+
 TestLink DB password: e83c82ea552540f8
 
 5. Copy script from testlink container
@@ -42,4 +47,5 @@ docker exec testlink_tldb_1 mysql --user root -pe83c82ea552540f8 < testlink_crea
 7. [Enjoy](http://localhost:8080)!
 
 admin
+
 admin
