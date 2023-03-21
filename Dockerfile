@@ -19,7 +19,7 @@ RUN apt clean
 
 RUN a2enmod php7.3
 
-COPY testlink-1.9.20.tar.gz /tmp
+COPY data/testlink-1.9.20.tar.gz /tmp
 
 RUN mkdir /testlink
 
